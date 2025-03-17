@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family: sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://i.pinimg.com/originals/2f/9e/58/2f9e5877b829805f51b86a976efb3057.png');
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            background-position: center;
+            background-size: cover;
+        
+        }
+        .main{
+            color:white;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .main h1{
+            padding-top: 15px;
+            font-size: 36px;
+            text-align: center;
+            color: white;
+            text-decoration: underline 5px;
+        }
+        .ra{
+            padding: 20px;
+            font-size: 20px;
+        }
+        .ra input{
+            font-size: 18px;
+            padding: 8px 5px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+        }
+        .ge{
+            font-size: 20px;  
+            padding-left: 20px;  
+        }
+        .btn{
+            padding: 10px;    
+        }
+        .btn input{
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: blue;
+            cursor: pointer;
+        }
+        .btn input:hover{
+            background-color: bisque;
+        }
+       
+        button{
+            background-color: blue;
+            margin: 20px;
+            padding:10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: medium;
+            
+        }
+        button a:hover{
+        
+            background-color: bisque;
+            width: 100%;
+
+        }
+        
+    
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>EDIT DATA</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="ra">
+          <label>Name :</label><br>
+          <input type="text" value="{{show.name}}" name="name" placeholder="Enter Name" required>
+          <br><br>
+          <label>DOB :</label><br>
+          <input type="date" value="{{show.dob}}" name="dob" placeholder="Enter Date" required>
+          <br><br>
+          <lebel>Mobile :</lebel><br>
+          <input type="number" value="{{show.mobile}}" name="mobile" placeholder="Enter number" required>
+          <br><br>
+          <label>Email :</label><br>
+          <input type="email" value="{{show.email}}" name="email" placeholder="Enter Email" required>
+          <br><br> 
+          </div>
+          <lebel class="ge">Gender :</lebel><br><br>
+          <input type="radio" value="Male" name="gender" required>Male
+          <input type="radio" value="Female"   name="gender" required>Female
+          <input type="radio" value="Other"    name="gender" required>Other
+          <br><br>
+        <div class="btn">
+        <input type="submit" value="update">
+        <input type="reset" value="Reset">
+        </div>
+        <button>
+            <a href="/RP">Back</a>
+        </button>
+    </form>
+    </div>
+</body>
+</html>

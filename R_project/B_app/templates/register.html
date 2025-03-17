@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         *{
+            padding: 0px;
+            margin: 0px;
+            font-family: sans-serif;
+         }
+         body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 110vh;
+            background-image:url('https://png.pngtree.com/background/20230618/original/pngtree-lakescape-landscape-nature-scenery-hd-picture-image_3712644.jpg') ;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; 
+         }
+         .reg{
+            width: 420px;
+            color:white;
+            border-radius: 10px;
+            padding: 15px;
+         }
+        .reg h1{
+            font-size: 36px;
+            text-align: center;
+            padding-top: 15px;
+            color: white;
+            text-decoration: underline 5px;  
+        } 
+        .main{
+            text-align: left;
+            padding: 20px;
+            font-size: 20px;
+        }
+        .main input{
+            font-size: 18px;
+            padding: 10px 8px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+        }
+        .btn{
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px;
+        }
+        .btn :hover{
+            color: red;
+        }
+        .end{
+            text-align: center;
+            font-size: 20px;
+        }
+        .end a{
+            /* color: powderblue; */
+            transition: color 0.2s;
+        }
+        .end a:hover{
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="reg">
+    <h1>REGISTRATION PAGE</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="main">
+        <lebel>Full Name :</lebel>
+        <br>
+        <input type="text" value="{{show.name}}" name="name" placeholder="Full Name" required>
+        <br><br>
+        <lebel>Email :</lebel>
+        <br>
+        <input type="email" value="{{show.email}}" name="email" placeholder="Enter Email" required>
+        <br><br>
+        <lebel>Password :</lebel>
+        <br>
+        <input type="password" name="pass1" placeholder="Enter Password">
+        <br><br>
+        <lebel>Confirm Password :</lebel>
+        <br>
+        <input type="password" name="pass2" placeholder="Enter Confirm Password">
+        <br><br>
+        <div class="btn">
+        <input type="submit" value="Register">
+        </div>
+    </div>
+    </form>
+    <div class="end">
+        If you have already accound <a href="/login">Login Here</a>
+    </div>
+    </div>
+</body>
+</html>

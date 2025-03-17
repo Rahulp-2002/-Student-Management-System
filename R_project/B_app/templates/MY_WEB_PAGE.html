@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+        }
+        table{
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+        }
+        th,td{
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>STUDENT'S INFORMATION</h1>
+    <a href="/Add">Add New</a>
+    <div>
+        <a href="/logout">Logout</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>DOB</th>
+                <th>MOBILE</th>
+                <th>EMAIL</th>
+                <th>GENDER</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in display %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.dob}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.gender}}</td>
+                <td>
+                    <a href="/Edit/{{i.id}}">Edit</a>
+                    <a href="/Details/{{i.id}}">Details</a>
+                    <a href="/Delete/{{i.id}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
